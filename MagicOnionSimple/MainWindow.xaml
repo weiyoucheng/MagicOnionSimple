@@ -1,0 +1,32 @@
+﻿<Window x:Class="MagicOnionSimple.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MagicOnionSimple"
+        d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" Margin="10">
+            <Label>StartTime</Label>
+            <DatePicker SelectedDate="{Binding StartTime}" Width="160"/>
+            <Label>EndTime</Label>
+            <DatePicker SelectedDate="{Binding EndTime}" Width="160"/>
+            <Label>Name</Label>
+            <TextBox Text="{Binding Name}" Width="160"/>
+            <RadioButton VerticalAlignment="Center" Name="radioUseGrpc" IsChecked="True">UseGrpc</RadioButton>
+            <RadioButton VerticalAlignment="Center" >UseMagicOnion</RadioButton>
+            <Button VerticalAlignment="Center" Width="80" Margin="10 0 0 0"
+                    Click="FindButton_Click">Find</Button>
+        </WrapPanel>
+        <DataGrid Grid.Row="1" CanUserAddRows="False"
+                  ItemsSource="{Binding Employees}">
+            
+        </DataGrid>
+    </Grid>
+</Window>

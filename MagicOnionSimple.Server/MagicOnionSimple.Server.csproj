@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.53.0" />
+    <PackageReference Include="MessagePack.AspNetCoreMvcFormatter" Version="2.5.108" />
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MagicOnionSimple.Dto\MagicOnionSimple.Dto.csproj" />
+    <ProjectReference Include="..\MagicOnionSimple.Models\MagicOnionSimple.Models.csproj" />
+    <ProjectReference Include="..\MagicOnionSimple.ServerInterface\MagicOnionSimple.ServerInterface.csproj" />
+    <ProjectReference Include="..\MagicOnionSimple.Shared\MagicOnionSimple.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
